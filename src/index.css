@@ -179,3 +179,68 @@ body {
   opacity: 0.6;
   pointer-events: none;
 }
+
+.card-container {
+  position: relative;
+  width: 800px;
+  height: 600px;
+  margin: 120px auto;
+  perspective: 1000px;
+}
+
+.card {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  transition: transform 0.6s ease, opacity 0.6s ease;
+}
+
+.card img {
+  width: 100%;
+  height: 80%;
+  object-fit: cover;
+}
+
+.card p {
+  padding: 12px;
+  text-align: center;
+  font-size: 1rem;
+  color: #4b0033;
+}
+
+/* Flying animation */
+.fly {
+  transform: translate(250px, -250px) rotate(20deg) scale(0.8);
+  opacity: 0;
+  z-index: 10;
+}
+
+/* Next card behind */
+.card.next {
+  transform: scale(0.95) translateY(10px);
+  opacity: 0.8;
+  z-index: -1;
+  transition: transform 0.6s ease, opacity 0.6s ease;
+}
+
+/* Close button */
+.close1 {
+  position: fixed;
+  top: 15px;
+  right: 20px;
+  border: none;
+  font-size: 24px;
+  background: white;
+  border-radius: 50%;
+  padding: 8px 14px;
+  cursor: pointer;
+}

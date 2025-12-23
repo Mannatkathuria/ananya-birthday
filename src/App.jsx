@@ -4,21 +4,10 @@ import GiftHub from "./components/GiftHub";
 import GiftOne from "./components/GiftOne";
 import GiftTwo from "./components/GiftTwo";
 import GiftThree from "./components/GiftThree";
-import { startTracking, stopTracking } from "./tracker";
 
 export default function App() {
   const [page, setPage] = useState("welcome");
   const [visited, setVisited] = useState([]);
-
-  useEffect(() => {
-    trackPage(page);
-  }, [page]);
-
-
-  useEffect(() => {
-    startTracking(page);
-    return () => stopTracking();
-  }, [page]);
 
   const markVisited = (gift) => {
     if (!visited.includes(gift)) {
