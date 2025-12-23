@@ -6,7 +6,7 @@ export default function Welcome({ next }) {
   return (
     <div className="center">
       <h1>Accept this gift? 🎁</h1>
-      <img src={angry ? "/angry-cat.png" : "/cute-cat.png"} width="200" />
+      <img src={angry ? "/anaya-birthday/angry-cat.png" : "/anaya-birthday/cute-cat.png"} width="200" />
       {!angry ? (
         <div>
           <button onClick={next}>YES 💖</button>
