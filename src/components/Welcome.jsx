@@ -6,7 +6,7 @@ export default function Welcome({ next }) {
   return (
     <div className="center">
       <h1>Accept this gift? 🎁</h1>
-      <img src={angry ? `${process.env.PUBLIC_URL}/assets/angry-cat.png` : `${process.env.PUBLIC_URL}/assets/cute-cat.png`} width="200" />
+      <img src={angry ? `/assets/angry-cat.png` : `/assets/cute-cat.png`} width="200" />
       {!angry ? (
         <div>
           <button onClick={next}>YES 💖</button>
