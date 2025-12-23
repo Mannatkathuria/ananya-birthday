@@ -5,17 +5,22 @@ const questions = [
   {
     q: "Who is most annoying?",
     options: ["Anushka", "Bhoomika", "Mannat", "Amam"],
-    reaction: "Correct 😌✨",
+    reaction: "",
   },
   {
     q: "Who is most talkative",
     options: ["Anushka", "Bhoomika", "Mannat", "Amam"],
-    reaction: "Correct 😌✨",
+    reaction: "",
   },
   {
     q: "Who is most crazy?",
     options: ["Anushka", "Bhoomika", "Mannat", "Amam"],
-    reaction: "Correct 😌✨",
+    reaction: "",
+  },
+  {  
+    q: "Who is cutest?",
+    options: ["You", "You only", "Obviously You", "OfcourseYou"],
+    reaction: "",
   },
 ];
 

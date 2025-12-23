@@ -1,10 +1,8 @@
 import { useEffect, useState } from "react";
 
-const text = `Dear Ananya 💖
-You are warmth, chaos, kindness, and laughter,
-all wrapped into one beautiful soul.
-This is just a reminder that you are loved
-more than words can ever say ✨`;
+const text = `Happy Birthday Ananya
+here's some mixed opinions about you from everyons:
+(we'll add content here)`;
 
 export default function GiftOne({ back, mark }) {
   const [display, setDisplay] = useState("");
