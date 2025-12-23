@@ -2,23 +2,25 @@ import { useState } from "react";
 // import "./GiftTwo.css"; // make sure CSS is in separate file or in your main CSS
 
 const cardsData = [
-  { img: "src/11.jpeg", text: "Badmitontoh khel hi aaye the atlest 😂" },
-  { img: "src/10.jpeg", text: "Bin baat ki holi .🥲" },
-  { img: "src/9.jpeg", text: "Excpected se zyada hi acha perform kra 😂" },
-  { img: "src/8.jpeg", text: "Almost kaand krdiya 😭" },
-  { img: "src/7.jpeg", text: "Finally river pe to ja hi aaye 💖" },
-  { img: "src/4.jpeg", text: "Upar se Annanu Mandir bhi ja aaye 😂" },
-  { img: "src/6.jpeg", text: "BTW it was truly one of my best days of life 🌸" },
-  { img: "src/5.jpeg", text: "Sorry uss din tumahre jaw pe boht gnda maara 🥲" },
-  { img: "src/12.jpeg", text: "Pehli baar kisi me kuch jeete 🥲" },
-  { img: "src/3.jpeg", text: "That bekaar si anchoring 😂" },
-  { img: "src/2.jpeg", text: "Finally cats mil gyi 🥹" },
-  { img: "src/1.jpeg", text: "Heels me naachna tough nhi tha? 😂" }
+  { img: {`${process.env.PUBLIC_URL}/assets/11.jpeg`}, text: "Badmiton khel hi aaye the atlest 😂" },
+  { img: {`${process.env.PUBLIC_URL}/assets/10.jpeg`}, text: "Bin baat ki holi .🥲" },
+  { img: {`${process.env.PUBLIC_URL}/assets/9.jpeg`}, text: "Excpected se zyada hi acha perform kra 😂" },
+  { img: {`${process.env.PUBLIC_URL}/assets/8.jpeg`}, text: "Almost kaand krdiya 😭" },
+  { img: {`${process.env.PUBLIC_URL}/assets/7.jpeg`}, text: "Finally river pe to ja hi aaye 💖" },
+  { img: {`${process.env.PUBLIC_URL}/assets/4.jpeg`}, text: "Upar se Annanu Mandir bhi ja aaye 😂" },
+  { img: {`${process.env.PUBLIC_URL}/assets/6.jpeg`}, text: "BTW it was truly one of my best days of life 🌸" },
+  { img: {`${process.env.PUBLIC_URL}/assets/5.jpeg`}, text: "Sorry uss din tumahre jaw pe boht gnda maara 🥲" },
+  { img: {`${process.env.PUBLIC_URL}/assets/12.jpeg`}, text: "Pehli baar kisi me kuch jeete 🥲" },
+  { img: {`${process.env.PUBLIC_URL}/assets/3.jpeg`}, text: "That bekaar si anchoring 😂" },
+  { img: {`${process.env.PUBLIC_URL}/assets/2.jpeg`}, text: "Finally cats mil gyi 🥹" },
+  { img: {`${process.env.PUBLIC_URL}/assets/1.jpeg`}, text: "Heels me naachna tough nhi tha? 😂" }
 ];
 
-export default function GiftTwo({ back }) {
+export default function GiftTwo({ back, mark }) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [flying, setFlying] = useState(false);
+
+  mark();
 
   const flipCard = () => {
     setFlying(true);

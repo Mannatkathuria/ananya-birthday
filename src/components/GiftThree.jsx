@@ -3,19 +3,19 @@ import confetti from "canvas-confetti";
 
 const questions = [
   {
-    q: "Who is amazing?",
-    options: ["You 💖", "Obviously You 😏", "You 💖", "Obviously You 😏"],
+    q: "Who is most annoying?",
+    options: ["Anushka", "Bhoomika", "Mannat", "Amam"],
     reaction: "Correct 😌✨",
   },
   {
-    q: "Who deserves all the happiness?",
-    options: ["You 🌸", "You 💫", "Still You 💖", "Always You 😌"],
-    reaction: "Obviously 😄💖",
+    q: "Who is most talkative",
+    options: ["Anushka", "Bhoomika", "Mannat", "Amam"],
+    reaction: "Correct 😌✨",
   },
   {
-    q: "Who makes life brighter?",
-    options: ["You ☀️", "You ✨", "You 💕", "Only You 😄"],
-    reaction: "YESSS 🥹🌈",
+    q: "Who is most crazy?",
+    options: ["Anushka", "Bhoomika", "Mannat", "Amam"],
+    reaction: "Correct 😌✨",
   },
 ];
 
@@ -40,10 +40,10 @@ export default function GiftThree({ back, mark }) {
     if (locked) return;
 
     setLocked(true);
-    setShowReaction(true);
+    // setShowReaction(true);
 
     setTimeout(() => {
-      setShowReaction(false);
+      // setShowReaction(false);
 
       if (index < questions.length - 1) {
         setIndex(index + 1);
@@ -51,7 +51,7 @@ export default function GiftThree({ back, mark }) {
       } else {
         fireConfetti(); // 🎉 FINAL
       }
-    }, 1000); // 1 second delay
+    }, 100); // 1 second delay
   };
 
   return (
