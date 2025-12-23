@@ -11,6 +11,11 @@ export default function App() {
   const [visited, setVisited] = useState([]);
 
   useEffect(() => {
+    trackPage(page);
+  }, [page]);
+
+
+  useEffect(() => {
     startTracking(page);
     return () => stopTracking();
   }, [page]);

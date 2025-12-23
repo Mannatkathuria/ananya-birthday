@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { trackClick } from "../ga";
 
 export default function Welcome({ next }) {
   const [angry, setAngry] = useState(false);
@@ -13,7 +14,9 @@ export default function Welcome({ next }) {
           <button onClick={() => setAngry(true)}>NO ❌</button>
         </div>
       ) : (
-        <button onClick={() => setAngry(false)}>TRY AGAIN 😾</button>
+        <button onClick={() =>{
+            trackClick("button", "try again")
+            setAngry(false)}}>TRY AGAIN 😾</button>
       )}
     </div>
   );
