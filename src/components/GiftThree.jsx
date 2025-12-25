@@ -1,28 +1,53 @@
 import { useState, useEffect } from "react";
 import confetti from "canvas-confetti";
-import { logAnswer } from "../logAnswer";
+import { logAnswer } from "../logAnswer.js";
 
 const questions = [
   {
     q: "Who is most annoying?",
     options: ["Anushka", "Bhoomika", "Mannat", "Amam"],
-    reaction: "😈 hehe"
+    reaction: ""
   },
   {
     q: "Who is most talkative?",
     options: ["Anushka", "Bhoomika", "Mannat", "Amam"],
-    reaction: "🗣️ nonstop!"
+    reaction: ""
+  },
+  {
+    q: "Who is most nerdy?",
+    options: ["Anushka", "Bhoomika", "Mannat", "Amam"],
+    reaction: ""
+  },
+  {
+    q: "Who is least nerdy?",
+    options: ["Anushka", "Bhoomika", "Mannat", "Amam"],
+    reaction: ""
+  },
+  {
+    q: "Who do you trust the most?",
+    options: ["Anushka", "Bhoomika", "Mannat", "Amam"],
+    reaction: ""
   },
   {
     q: "Who is most crazy?",
     options: ["Anushka", "Bhoomika", "Mannat", "Amam"],
-    reaction: "🤪 absolutely"
+    reaction: ""
+  },
+  {
+    q: "Who is most caring?",
+    options: ["Anushka", "Bhoomika", "Mannat", "Amam"],
+    reaction: ""
+  },
+  {
+    q: "Who puts everyone in trouble?",
+    options: ["Anushka", "Bhoomika", "Mannat", "Amam"],
+    reaction: ""
   },
   {
     q: "Who is cutest?",
-    options: ["You", "You only", "Obviously You", "Of course You"],
-    reaction: "💖 correct answer"
-  }
+    options: ["You", "You only", "Obviously You", "Ofcourse You"],
+    reaction: ""
+  },
 ];
 
 export default function GiftThree({ back, mark }) {
@@ -49,10 +74,7 @@ export default function GiftThree({ back, mark }) {
     setLocked(true);
 
     // 🔥 LOG ANSWER
-    logAnswer({
-      question: questions[index].q,
-      answer: answer
-    });
+    logAnswer( index+1, questions[index].q, answer);
 
     // Show reaction briefly
     // setShowReaction(true);
@@ -67,7 +89,7 @@ export default function GiftThree({ back, mark }) {
         setFinished(true);
         fireConfetti();
       }
-    }, 100); // reaction visible for 0.8s
+    }, 100);
   };
 
   return (
@@ -87,6 +109,7 @@ export default function GiftThree({ back, mark }) {
       {/* Question */}
       {!showReaction && !finished && (
         <>
+        <p> This is all anonymous, no one will know what you've choosen, its just to count your score and give you prize accordingly</p>
           <h2>{questions[index].q}</h2>
 
           <div className="options">
@@ -108,6 +131,8 @@ export default function GiftThree({ back, mark }) {
         <>
           <h2>All done 😄🎉</h2>
           <p>You survived the interrogation 💖</p>
+          <h3>You won a <h2>LOLIPOP</h2></h3>
+          <img className="lolipop" src="/ananya-birthday/assets/lolipop.png" alt="lolipop" />
 
           <button className="back-btn" onClick={back}>
             Back to Gifts 🎁
